@@ -48,4 +48,13 @@ functionnewTweet(e){
     this.reset();
     
     }
+    //Remove the tweets from the DOM
+functionremoveTweet(e){
+    if(e.target.classList.contains('remove-tweet')) {
+    e.target.parentElement.remove();
+        }
+    
+        //Remove from Storage
+    removeTweetLocalStorage(e.target.parentElement.textContent);
+    }
     
