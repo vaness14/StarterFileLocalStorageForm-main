@@ -102,6 +102,26 @@ functionlocalStorageOnLoad() {
     tweetList.appendChild(li);
         });
     }
+    //Removes the tweet from local storage
+functionremoveTweetLocalStorage(tweet) {
+    //Get tweets from Storage
+let tweets = getTweetsFromStorage();
+
+    //Remove the X from the Tweet
+consttweetDelete = tweet.substring(0, tweet.length - 1);
+
+    //Loop throught the tweets and remove the tweet that's equal
+tweets.forEach(function(tweetLS, index) {
+if(tweetDelete === tweetLS) {
+tweets.splice(index, 1);
+        }
+    });
+
+    //Save the Data
+localStorage.setItem('tweets',JSON.stringify(tweets));
+
+}
+
     
     
     
